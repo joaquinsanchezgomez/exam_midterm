@@ -1,0 +1,23 @@
+---
+title: "HW5"
+author: "HT & JSG"
+date: "2023-03-08"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source_code: embed
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+library(nycflights13)
+dat <- data.frame(Arrival_Delay = flights$arr_delay, Carrier= flights$carrier)
+  
+p <- ggplot(dat, aes(x=Carrier, y= Arrival_Delay)) +
+  geom_point(shape=1) 
+ggplotly(p)
+```
+
+-----------------------------------------------------------------------
+  
